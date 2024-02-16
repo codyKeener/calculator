@@ -22,7 +22,7 @@ body {
     height: 600px;
     width: 450px;
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(14, 14, 16);
 }
 
@@ -30,7 +30,7 @@ body {
     width: 450px;
     height: 125px;
     border-bottom: 2px solid black;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .buttonContainer {
@@ -57,6 +57,9 @@ body {
     background-color: lightgray;
     border: 1px solid lightgray;
     border-radius: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: black;
 }
 
 .littleButton {
@@ -65,6 +68,9 @@ body {
     background-color: gray;
     border: 1px solid gray;
     border-radius: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
 }
 
 .littleButtonRight {
@@ -73,6 +79,9 @@ body {
     background-color: orange;
     border: 1px solid orange;
     border-radius: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
 }
 
 .mediumButton {
@@ -81,6 +90,9 @@ body {
     background-color: gray;
     border: 1px solid gray;
     border-radius: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
 }
 
 .footer {
