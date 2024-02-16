@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(229, 229, 229);
+}
+
+.header {
+    height: 100px;
+}
+
+.bodyContainer {
+    display: flex;
+    flex: 1;
+    margin-top: auto;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.calculatorContainer {
+    height: 600px;
+    width: 450px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(14, 14, 16);
+}
+
+.calculatorScreen {
+    width: 450px;
+    height: 125px;
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    box-sizing: border-box;
+}
+
+.buttonRow {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bigButton {
+    height: 70px;
+    width: 320px;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+}
+
+.littleButton {
+    height: 70px;
+    width: 100px;
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+.littleButtonRight {
+    height: 70px;
+    width: 100px;
+    background-color: orange;
+    border: 1px solid orange;
+    border-radius: 50px;
+}
+
+.mediumButton {
+    height: 70px;
+    width: 210px;
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 12px;
+}
