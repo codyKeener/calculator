@@ -538,7 +538,7 @@ lastClickedButton = "decimal";
 
 equalsButton.addEventListener("click", function() {
     console.log(operator,numerator2);
-    if (operator == "") {
+    if (operator == "" || numerator2 == undefined) {
         return;
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
