@@ -1,3 +1,10 @@
+/* .kode-mono-calculatorFont {
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+
 body {
     display: flex;
     flex-direction: column;
@@ -26,18 +33,24 @@ body {
     background-color: rgb(14, 14, 16);
 }
 
-.calculatorScreen {
+#calculatorScreen {
     width: 450px;
     height: 125px;
-    border-bottom: 2px solid black;
     margin-bottom: 25px;
+    border-bottom: 2px solid black;
+}
+
+#screenParagraph {
+    color: white;
+    text-align: right;
+    font-family: "Kode Mono", monospace;
+    font-size: 100px;
+    padding-right: 5px;
 }
 
 .buttonContainer {
     display: flex;
     flex-direction: column;
-    /* padding-left: 10px;
-    padding-right: 10px; */
     box-sizing: border-box;
 }
 
@@ -51,6 +64,12 @@ body {
     padding-right: 10px;
 }
 
+/* borrowed this code from w3 schools: https://www.w3schools.com/howto/howto_css_animate_buttons.asp */
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 .bigButton {
     height: 70px;
     width: 320px;
@@ -60,6 +79,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
     color: black;
+}
+
+.bigButton:hover {
+    background-color: rgb(92, 92, 92);
 }
 
 .littleButton {
@@ -73,6 +96,10 @@ body {
     color: white;
 }
 
+.littleButton:hover {
+    background-color: rgb(72, 72, 72);
+}
+
 .littleButtonRight {
     height: 70px;
     width: 100px;
@@ -84,6 +111,10 @@ body {
     color: white;
 }
 
+.littleButtonRight:hover {
+    background-color: rgb(209, 112, 0);
+}
+
 .mediumButton {
     height: 70px;
     width: 210px;
@@ -93,6 +124,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
     color: white;
+}
+
+.mediumButton:hover {
+    background-color: rgb(72, 72, 72);
 }
 
 .footer {
