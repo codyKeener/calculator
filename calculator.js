@@ -75,12 +75,18 @@ const equalsButton = document.getElementById("equalsButton");
 clearButton.addEventListener("click", function() {
     displayValue = "0"
     screenNode.nodeValue = displayValue;
-    numerator1 = "0";
+    numerator1 = 0;
+    numerator2 = "";
+    operator = "";
     lastClickedButton = "clear";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 divideButton.addEventListener("click", function() {
-    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton" || lastClickedButton == "" || lastClickedButton == "equals") {
         operator = "divide";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
@@ -92,6 +98,10 @@ divideButton.addEventListener("click", function() {
                 displayValue = equalsAnswerString;
                 screenNode.nodeValue = displayValue;
                 numerator1 = parseFloat(equalsAnswerString);
+            } else if (equalsAnswer <= .000001) {
+                displayValue = equalsAnswer;
+                screenNode.nodeValue = displayValue;
+                numerator1 = parseFloat(equalsAnswer);
             } else {
                 // need to figure out how to make exponentials (scientific notation) work for numbers over 999999999)
                 equalsAnswerString = String(equalsAnswer.toExponential());
@@ -102,10 +112,14 @@ divideButton.addEventListener("click", function() {
             }
         }
     operator = "divide";
+    if (lastClickedButton != "") {
+        subtractButton.style = null;
+    multiplyButton.style = null;
+    addButton.style = null;
+    divideButton.style.backgroundColor = "white";
+    divideButton.style.color = "orange";
+    }
     lastClickedButton = "divideButton";
-
-    // divideButton.style.backgroundColor = "white";
-    // divideButton.style.color = "orange";
 });
 
 sevenButton.addEventListener("click", function() {
@@ -137,6 +151,10 @@ sevenButton.addEventListener("click", function() {
         }
     }
     lastClickedButton = "7";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 eightButton.addEventListener("click", function() {
@@ -167,7 +185,11 @@ eightButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "8";
+    lastClickedButton = "8";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 nineButton.addEventListener("click", function() {
@@ -198,11 +220,15 @@ nineButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "9";
+    lastClickedButton = "9";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 multiplyButton.addEventListener("click", function() {
-    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton"  || lastClickedButton == "" || lastClickedButton == "equals") {
         operator = "multiply";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
@@ -214,6 +240,10 @@ multiplyButton.addEventListener("click", function() {
                 displayValue = equalsAnswerString;
                 screenNode.nodeValue = displayValue;
                 numerator1 = parseFloat(equalsAnswerString);
+            } else if (equalsAnswer <= .000001) {
+                displayValue = equalsAnswer;
+                screenNode.nodeValue = displayValue;
+                numerator1 = parseFloat(equalsAnswer);
             } else {
                 // need to figure out how to make exponentials (scientific notation) work for numbers over 999999999)
                 equalsAnswerString = String(equalsAnswer.toExponential());
@@ -224,9 +254,14 @@ multiplyButton.addEventListener("click", function() {
             }
         }
     operator = "multiply";
+    if (lastClickedButton != "") {
+        subtractButton.style = null;
+        addButton.style = null;
+        divideButton.style = null;
+        multiplyButton.style.backgroundColor = "white";
+        multiplyButton.style.color = "orange";
+    }
     lastClickedButton = "multiplyButton";
-    // multiplyButton.style.backgroundColor = "white";
-    // multiplyButton.style.color = "orange";
 });
 
 fourButton.addEventListener("click", function() {
@@ -258,6 +293,10 @@ fourButton.addEventListener("click", function() {
         }
     }
     lastClickedButton = "4";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 fiveButton.addEventListener("click", function() {
@@ -288,7 +327,11 @@ fiveButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "5";
+    lastClickedButton = "5";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 sixButton.addEventListener("click", function() {
@@ -319,11 +362,15 @@ sixButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "6";
+    lastClickedButton = "6";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 subtractButton.addEventListener("click", function() {
-    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton" || lastClickedButton == "" || lastClickedButton == "equals") {
         operator = "subtract";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
@@ -336,6 +383,10 @@ subtractButton.addEventListener("click", function() {
                 displayValue = equalsAnswerString;
                 screenNode.nodeValue = displayValue;
                 numerator1 = parseFloat(equalsAnswerString);
+            } else if (equalsAnswer <= .000001) {
+                displayValue = equalsAnswer;
+                screenNode.nodeValue = displayValue;
+                numerator1 = parseFloat(equalsAnswer);
             } else {
                 // need to figure out how to make exponentials (scientific notation) work for numbers over 999999999)
                 equalsAnswerString = String(equalsAnswer.toExponential());
@@ -346,9 +397,14 @@ subtractButton.addEventListener("click", function() {
             }
         } 
     operator = "subtract";
+    if (lastClickedButton != "") {
+        addButton.style = null;
+        multiplyButton.style = null;
+        divideButton.style = null;
+        subtractButton.style.backgroundColor = "white";
+        subtractButton.style.color = "orange";
+    }
     lastClickedButton = "subtractButton";
-    // subtractButton.style.backgroundColor = "white";
-    // subtractButton.style.color = "orange";
 });
 
 oneButton.addEventListener("click", function() {
@@ -380,6 +436,10 @@ oneButton.addEventListener("click", function() {
         }
     }
     lastClickedButton = "1";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 twoButton.addEventListener("click", function() {
@@ -410,7 +470,11 @@ twoButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "2";
+    lastClickedButton = "2";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 threeButton.addEventListener("click", function() {
@@ -441,11 +505,15 @@ threeButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "3";
+    lastClickedButton = "3";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 addButton.addEventListener("click", function() {
-    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton" || lastClickedButton == "" || lastClickedButton == "equals") {
         operator = "add";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
@@ -457,6 +525,10 @@ addButton.addEventListener("click", function() {
                 displayValue = equalsAnswerString;
                 screenNode.nodeValue = displayValue;
                 numerator1 = parseFloat(equalsAnswerString);
+            } else if (equalsAnswer <= .000001) {
+                displayValue = equalsAnswer;
+                screenNode.nodeValue = displayValue;
+                numerator1 = parseFloat(equalsAnswer);
             } else {
                 // need to figure out how to make exponentials (scientific notation) work for numbers over 999999999)
                 equalsAnswerString = String(equalsAnswer.toExponential());
@@ -467,9 +539,14 @@ addButton.addEventListener("click", function() {
             }
         }
     operator = "add";
+    if (lastClickedButton != "") {
+        subtractButton.style = null;
+        multiplyButton.style = null;
+        divideButton.style = null;
+        addButton.style.backgroundColor = "white";
+        addButton.style.color = "orange";
+    }
     lastClickedButton = "addButton";
-    // addButton.style.backgroundColor = "white";
-    // addButton.style.color = "orange";
 });
 
 zeroButton.addEventListener("click", function() {
@@ -500,7 +577,11 @@ zeroButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "0";
+    lastClickedButton = "0";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 decimalButton.addEventListener("click", function() {
@@ -533,7 +614,11 @@ decimalButton.addEventListener("click", function() {
             numerator1 = displayValue;
         }
     }
-lastClickedButton = "decimal";
+    lastClickedButton = "decimal";
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
 });
 
 equalsButton.addEventListener("click", function() {
@@ -550,6 +635,10 @@ equalsButton.addEventListener("click", function() {
             displayValue = equalsAnswerString;
             screenNode.nodeValue = displayValue;
             numerator1 = parseFloat(equalsAnswerString);
+        } else if (equalsAnswer <= .000001) {
+            displayValue = equalsAnswer;
+            screenNode.nodeValue = displayValue;
+            numerator1 = parseFloat(equalsAnswer);
         } else {
             // need to figure out how to make exponentials (scientific notation) work for numbers over 999999999)
             equalsAnswerString = String(equalsAnswer.toExponential());
@@ -560,4 +649,9 @@ equalsButton.addEventListener("click", function() {
         }
     }
     lastClickedButton = "equals"
+    subtractButton.style = null;
+    addButton.style = null;
+    divideButton.style = null;
+    multiplyButton.style = null;
+    console.log(numerator1,operator,numerator2);
 });
