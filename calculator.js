@@ -80,8 +80,8 @@ clearButton.addEventListener("click", function() {
 });
 
 divideButton.addEventListener("click", function() {
-    if (lastClickedButton == "divideButton") {
-        return;
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+        operator = "divide";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
         screenNode.nodeValue = displayValue;
@@ -202,8 +202,8 @@ lastClickedButton = "9";
 });
 
 multiplyButton.addEventListener("click", function() {
-    if (lastClickedButton == "multiplyButton") {
-        return;
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+        operator = "multiply";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
         screenNode.nodeValue = displayValue;
@@ -323,8 +323,8 @@ lastClickedButton = "6";
 });
 
 subtractButton.addEventListener("click", function() {
-    if (lastClickedButton == "subractButton") {
-        return;
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+        operator = "subtract";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
         screenNode.nodeValue = displayValue;
@@ -445,8 +445,8 @@ lastClickedButton = "3";
 });
 
 addButton.addEventListener("click", function() {
-    if (lastClickedButton == "addButton") {
-        return;
+    if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "multiplyButton" || lastClickedButton == "divideButton") {
+        operator = "add";
     } else if (operator == "divide" && numerator2 == 0) {
         displayValue = "Nice Try";
         screenNode.nodeValue = displayValue;
@@ -504,7 +504,7 @@ lastClickedButton = "0";
 });
 
 decimalButton.addEventListener("click", function() {
-    if (displayValue.indexOf(".") > 0) {
+    if (displayValue.indexOf(".") > 0 && operator == "") {
         return;
     } else if (lastClickedButton == "addButton" || lastClickedButton == "subtractButton" || lastClickedButton == "divideButton" || lastClickedButton == "multiplyButton") {    
         displayValue = "0.";
